@@ -10,6 +10,8 @@ Requirements:
 - Django 2.0.5
 - Other dependencies in `requirements.txt`
 
+> For Vuetify UI build steps, follow [this](ui/README.md)
+
 Procedure:
 - Install [python](https://www.python.org/downloads/) in your environment(pre-installed on Ubuntu).
 - Navigate to the cloned repository.
