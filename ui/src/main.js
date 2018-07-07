@@ -4,6 +4,7 @@ import router from './router'
 import {
   Vuetify,
   VApp,
+  VCheckbox,
   VNavigationDrawer,
   VFooter,
   VList,
@@ -11,6 +12,9 @@ import {
   VIcon,
   VGrid,
   VToolbar,
+  VTextField,
+  VForm,
+  VParallax,
   transitions
 } from 'vuetify'
 import '../node_modules/vuetify/src/stylus/app.styl'
@@ -18,6 +22,7 @@ import '../node_modules/vuetify/src/stylus/app.styl'
 Vue.use(Vuetify, {
   components: {
     VApp,
+    VCheckbox,
     VNavigationDrawer,
     VFooter,
     VList,
@@ -25,15 +30,19 @@ Vue.use(Vuetify, {
     VIcon,
     VGrid,
     VToolbar,
+    VTextField,
+    VForm,
+    VParallax,
     transitions
   },
   theme: {
-    primary: '#ee44aa',
+    primary: 'black',
     secondary: '#424242',
     accent: '#82B1FF',
     error: '#FF5252',
     info: '#2196F3',
     success: '#4CAF50',
+    btncolor: '#2196f3',
     warning: '#FFC107'
   }
 })
