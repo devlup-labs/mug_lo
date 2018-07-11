@@ -12,8 +12,6 @@ import {
   VIcon,
   VGrid,
   VToolbar,
-  VTextField,
-  VForm,
   VParallax,
   transitions
 } from 'vuetify'
@@ -30,8 +28,6 @@ Vue.use(Vuetify, {
     VIcon,
     VGrid,
     VToolbar,
-    VTextField,
-    VForm,
     VParallax,
     transitions
   },
