@@ -32,18 +32,12 @@
           <v-flex>
             <v-card>
               <v-card-title primary-title>
-                <div>
-                  Sign in with:
+                <v-flex row justify-center>
+                  <div>Sign in with:</div>
                   <router-link to="/signin">
-                    <v-avatar>
-                      <div id="gicon">
-                        <img src="http://icons.iconarchive.com/icons/danleech/simple/1024/google-icon.png"
-                             width="25px"
-                             height="25px"/>
-                      </div>
-                    </v-avatar>
+                    <v-icon medium color="red darken-3">fa-google-plus</v-icon>
                   </router-link>
-                </div>
+                </v-flex>
               </v-card-title>
             </v-card>
           </v-flex>
@@ -59,7 +53,8 @@
     VTextField,
     VCheckbox,
     VForm,
-    VBtn
+    VBtn,
+    VIcon
   } from 'vuetify'
 
   export default {
@@ -69,7 +64,8 @@
       VCheckbox,
       VTextField,
       VForm,
-      VBtn
+      VBtn,
+      VIcon
     }
   }
 </script>
