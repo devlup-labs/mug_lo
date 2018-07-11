@@ -1,6 +1,6 @@
 <template>
   <v-container align-center justify-center fill-height>
-    <v-flex column xs3 text-xs-center>
+    <v-flex column sm6 md6 lg4 text-xs-center>
       <v-container grid-list-lg>
         <v-layout column>
           <v-flex>
