@@ -15,7 +15,7 @@
                 <v-layout align-center justify-space-around wrap>
                   <v-checkbox label="Remember me"></v-checkbox>
                   <v-spacer></v-spacer>
-                  <router-link to="/forgotpass">
+                  <router-link to="password-reset">
                     <span class="blue--text"> Forgot Password?</span>
                   </router-link>
                 </v-layout>
@@ -32,9 +32,9 @@
           <v-card-title primary-title>
             <v-flex row justify-center>
               <div>Sign in with:</div>
-              <router-link to="/signin">
+              <a :href="googleSignInUrl">
                 <v-icon medium color="red darken-3">fa-google-plus</v-icon>
-              </router-link>
+              </a>
             </v-flex>
           </v-card-title>
         </v-card>
@@ -52,6 +52,7 @@
     VBtn,
     VIcon
   } from 'vuetify'
+  import {mapGetters} from 'vuex'
 
   export default {
     name: 'login-panel',
@@ -62,6 +63,14 @@
       VForm,
       VBtn,
       VIcon
+    },
+    computed: {
+      ...mapGetters('config', {
+        BACKEND_API_ADDRESS: 'BACKEND_API_ADDRESS'
+      }),
+      googleSignInUrl () {
+        return this.BACKEND_API_ADDRESS + '/login/google-oauth2'
+      }
     }
   }
 </script>
