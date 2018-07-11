@@ -5,6 +5,8 @@
         <img src="../assets/logo.png" alt="Vuetify.js" class="mb-5">
         <blockquote>
           &#8220;First, solve the problem. Then, write the code.&#8221;
+          <br>
+          From Store: {{ this.$store.state.message }}
           <footer>
             <small>
               <em>&mdash;John Johnson</em>
