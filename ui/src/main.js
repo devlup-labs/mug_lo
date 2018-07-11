@@ -16,6 +16,7 @@ import {
   transitions
 } from 'vuetify'
 import '../node_modules/vuetify/src/stylus/app.styl'
+import 'font-awesome/css/font-awesome.css'
 
 Vue.use(Vuetify, {
   components: {
