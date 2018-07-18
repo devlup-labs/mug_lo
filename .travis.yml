@@ -22,5 +22,8 @@ script:
   - python manage.py makemigrations
   - python manage.py migrate
   - coverage run manage.py test
+  - cd ../ui
+  - npm install
+  - npm run build
 #after_success:
 #  - coveralls
