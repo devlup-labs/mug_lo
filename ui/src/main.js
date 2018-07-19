@@ -18,6 +18,9 @@ import {
 } from 'vuetify'
 import '../node_modules/vuetify/src/stylus/app.styl'
 import 'font-awesome/css/font-awesome.css'
+import httpClient from './plugins/httpClient'
+
+Vue.use(httpClient)
 
 Vue.use(Vuetify, {
   components: {
