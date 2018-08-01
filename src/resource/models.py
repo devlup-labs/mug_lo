@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.validators import RegexValidator
-from accounts.models import StudentProfile
+from account.models import StudentProfile
 
 
 class Books(models.Model):

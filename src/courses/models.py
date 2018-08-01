@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.validators import RegexValidator
-from accounts.models import FacultyProfile
+from account.models import FacultyProfile
 
 
 class MarksDistribution(models.Model):
