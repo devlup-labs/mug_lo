@@ -1,11 +1,11 @@
 from django.contrib import admin
-from .models import Books, Assignment, Notes, PreviousYearQuizAndAssignments, PreviousYearSemPapers
+from .models import Book, Assignment, Notes, Quiz, QuestionPaper
 
 
-@admin.register(Books)
-class BooksAdmin(admin.ModelAdmin):
+@admin.register(Book)
+class BookAdmin(admin.ModelAdmin):
     class Meta:
-        model = Books
+        model = Book
         fields = '__all__'
 
 
@@ -23,15 +23,15 @@ class NotesAdmin(admin.ModelAdmin):
         fields = '__all__'
 
 
-@admin.register(PreviousYearQuizAndAssignments)
-class PreviousYearQuizAndAssignmentsAdmin(admin.ModelAdmin):
+@admin.register(Quiz)
+class QuizAdmin(admin.ModelAdmin):
     class Meta:
-        model = PreviousYearQuizAndAssignments
+        model = Quiz
         fields = '__all__'
 
 
-@admin.register(PreviousYearSemPapers)
-class PreviousYearSemPapersAdmin(admin.ModelAdmin):
+@admin.register(QuestionPaper)
+class QuestionPaperAdmin(admin.ModelAdmin):
     class Meta:
-        model = PreviousYearSemPapers
+        model = QuestionPaper
         fields = '__all__'

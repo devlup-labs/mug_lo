@@ -1,5 +1,6 @@
 django==2.1
 django-decouple==2.1
 social-auth-app-django==2.1.0
+django-cleanup
 flake8
 psycopg2
