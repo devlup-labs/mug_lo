@@ -15,15 +15,18 @@ class MarksDistribution(models.Model):
 class CreditDistribution(models.Model):
     lectures = models.PositiveIntegerField()
     tutorials = models.PositiveIntegerField()
-    lab = models.PositiveIntegerField()
+    practicals = models.PositiveIntegerField()
+
+    def __str__(self):
+        return 'LTP ({}-{}-{})'.format(self.lectures, self.tutorials, self.practicals)
 
 
 class Course(models.Model):
     # Validators
-    code = RegexValidator(r'^[A-Z]{2}[0-9]{3}')
+    code_regex = RegexValidator(r'^[A-Z]{2}[0-9]{3}')
     # Models
-    course_code = models.CharField(max_length=5, validators=[code])
-    course_name = models.CharField(max_length=80)
+    code = models.CharField(max_length=5, validators=[code_regex])
+    name = models.CharField(max_length=80)
     faculty = models.ForeignKey(FacultyProfile, on_delete=models.SET_NULL, null=True, blank=True)
     syllabus = models.TextField()
     marks_distribution = models.ForeignKey(MarksDistribution, on_delete=models.SET_NULL, blank=True, null=True)
