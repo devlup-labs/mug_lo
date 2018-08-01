@@ -1,39 +1,50 @@
 from django.db import models
+from django.utils.text import slugify
 from django.core.validators import RegexValidator
 from account.models import StudentProfile
 
 
-class Books(models.Model):
-    book_name = models.CharField(max_length=50)
-    file = models.FileField(upload_to='books')
+def get_resource_upload_path(instance, filename):
+    return '{}/{}'.format(slugify(instance.__class__.__name__), filename)
+
+
+class Resource(models.Model):
+    file = models.FileField(upload_to=get_resource_upload_path)
+
+    class Meta:
+        abstract = True
+
+
+class Book(Resource):
+    name = models.CharField(max_length=50)
     author = models.CharField(max_length=50, blank=True, null=True)
 
 
-class Notes(models.Model):
+class Notes(Resource):
     author = models.ForeignKey(StudentProfile, on_delete=models.SET_NULL, null=True, blank=True)
     topic = models.CharField(max_length=100, blank=True, null=True)
-    file = models.FileField(upload_to='notes')
 
 
-class Assignment(models.Model):
-    assignment_name = models.CharField(max_length=30, blank=True, null=True)
-    file = models.FileField(upload_to='assignment')
+class Assignment(Resource):
+    name = models.CharField(max_length=30, blank=True, null=True)
 
 
-class PreviousYearSemPapers(models.Model):
+class QuestionPaper(Resource):
     # Validators
-    valid_year = RegexValidator(r'^[0-9]{4}$', message='Not a valid year!')
+    YEAR_REGEX = RegexValidator(r'^[0-9]{4}$', message='Not a valid year!')
+    # Choices
+    EXAM_CHOICES = (
+        ('MS1', 'Mid Sem 1'),
+        ('MS2', 'Mid Sem 2'),
+        ('ESM', 'End Sem')
+    )
     # Model
-    year = models.PositiveIntegerField(validators=[valid_year])
-    file = models.FileField(upload_to='previous-year-papers')
-    mid_sem_1 = models.BooleanField()
-    mid_sem_2 = models.BooleanField()
-    end_sem = models.BooleanField()
+    exam = models.CharField(max_length=3, choices=EXAM_CHOICES)
+    year = models.PositiveIntegerField(validators=[YEAR_REGEX])
 
 
-class PreviousYearQuizAndAssignments(models.Model):
+class Quiz(Resource):
     # Validators
-    valid_year = RegexValidator(r'^[0-9]{4}$', message='Not a valid year!')
+    YEAR_REGEX = RegexValidator(r'^[0-9]{4}$', message='Not a valid year!')
     # Model
-    year = models.PositiveIntegerField(validators=[valid_year])
-    file = models.FileField(upload_to='previous-year-papers')
+    year = models.PositiveIntegerField(validators=[YEAR_REGEX])

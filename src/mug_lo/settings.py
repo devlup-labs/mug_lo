@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social_django',
+    'django_cleanup',
     'account',
     'courses',
     'resource',
@@ -153,6 +154,10 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, '../media')
+
+MEDIA_URL = '/media/'
 
 # Email backend configurations
 SERVER_EMAIL = config('SERVER_EMAIL', default='noreply@localhost.com', cast=str)
