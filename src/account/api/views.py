@@ -4,6 +4,11 @@ from rest_framework import status
 
 
 class AuthenticationCheckAPIView(APIView):
+    """
+        get:
+        Returns the authentication status code and message for current request.
+    """
+
     def get(self, request, *args, **kwargs):
         authenticated = request.user.is_authenticated
         data = {
