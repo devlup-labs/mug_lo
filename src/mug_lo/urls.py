@@ -24,6 +24,7 @@ admin.site.index_title = 'Control Panel'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include('api.urls', namespace='api')),
     path('', include('social_django.urls', namespace='social'))
 ]
 
