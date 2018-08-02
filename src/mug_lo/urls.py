@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework.documentation import include_docs_urls
 
 admin.site.site_title = 'MugLo Administration'
 admin.site.site_header = 'MugLo Administration'
@@ -25,6 +26,7 @@ admin.site.index_title = 'Control Panel'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls', namespace='api')),
+    path('api/docs/', include_docs_urls(title='MugLo API', public=False)),
     path('', include('social_django.urls', namespace='social'))
 ]
 
