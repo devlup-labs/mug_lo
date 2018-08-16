@@ -2,11 +2,11 @@
  <upload-head/>
 </template>
 <script>
-import UploadPanel from '../../components/UploadPanel'
+import UploadHead from '../../components/UploadHead'
 export default{
   name: 'Upload',
   components: {
-    UploadPanel
+    UploadHead
   }
 }
 </script>
