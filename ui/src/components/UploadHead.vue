@@ -33,17 +33,12 @@ import {
   VBtn,
   VCard
 } from 'vuetify'
-import {mapGetters} from 'vuex'
+
 export default{
   name: 'upload-head',
   components: {
     VBtn,
     VCard
-  },
-  computed: {
-    ...mapGetters('config', {
-      BACKEND_API_ADDRESS: 'BACKEND_API_ADDRESS'
-    })
   }
 }
 </script>

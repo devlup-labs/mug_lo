@@ -7,11 +7,11 @@
 </template>
 
 <script>
- import DashboardPanel from '../../components/DashboardPanel'
+ import DashboardHead from '../../components/DashboardHead'
  export default {
    name: 'Dashboard',
    components: {
-     DashboardPanel
+     DashboardHead
    }
  }
 </script>

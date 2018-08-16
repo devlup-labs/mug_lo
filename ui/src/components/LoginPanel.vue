@@ -6,7 +6,7 @@
           <v-container
             fluid>
             <v-card-title primary-title>
-              <span class="display-10 blue--text">Login</span>
+              <span class="display-1 blue--text">Login</span>
             </v-card-title>
             <v-form>
               <v-text-field prepend-icon="person" name="Username" label="Username"></v-text-field>
