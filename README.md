@@ -8,7 +8,7 @@
 Requirements:
 - Python 3.6 runtime
 - Django 2.0.5
-- Other dependencies in `requirements.txt`
+- Other dependencies in `Pipfile`
 
 > For Vuetify UI build steps, follow [this](ui/README.md)
 
@@ -18,19 +18,18 @@ Procedure:
     ```
     cd <project_directory_name>     # mug_lo
     ```
-- Create a new virtual environment and activate it.
+- Install `pipenv` for dependency management
     ```
-    sudo apt-get install -y python3-venv
-    python3 -m venv muglo_venv
-    source muglo_venv/bin/activate
+    pip install pipenv
     ```
-- Use pip to install other dependencies from `requirements.txt`
+- Use pipenv to install other dependencies from `Pipfile`
     ```
-    pip install -r requirements.txt
+    pipenv install --dev
     ```
-- Change to `src` directory
+- Change to `src` directory and optionally activate virtual environment, if you don't want to activate env, use `pipenv run` to run python scripts
     ```
     cd src
+    source "$(pipenv --venv)"/bin/activate
     ```
 - Make database migrations
     ```
