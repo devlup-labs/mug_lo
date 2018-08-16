@@ -1,13 +1,11 @@
-# MugLo ![Status active](https://img.shields.io/badge/Status-active%20development-2eb3c1.svg) ![Django 2.0.5](https://img.shields.io/badge/Django-2.0.5-green.svg) ![Python 3.6](https://img.shields.io/badge/Python-3.6-blue.svg)
+# MugLo ![Status active](https://img.shields.io/badge/Status-active%20development-2eb3c1.svg) ![Django 2.1](https://img.shields.io/badge/Django-2.1-green.svg) ![Python 3.6](https://img.shields.io/badge/Python-3.6-blue.svg)
 [![Build Status](https://travis-ci.org/devlup-labs/mug_lo.svg?branch=master)](https://travis-ci.org/devlup-labs/mug_lo)
 ## A platform for sharing notes within a group of users
-### Purpose
-[GOES HERE]
 
 ### Installation:
 Requirements:
 - Python 3.6 runtime
-- Django 2.0.5
+- Django 2.1
 - Other dependencies in `Pipfile`
 
 > For Vuetify UI build steps, follow [this](ui/README.md)
