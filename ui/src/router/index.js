@@ -2,6 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HomePage from '../pages'
 import LogIn from '../pages/login'
+import Dashboard from '../pages/dashboard'
+import Upload from '../pages/upload'
+
 Vue.use(Router)
 
 export default new Router({
@@ -21,6 +24,16 @@ export default new Router({
       path: '/password-reset',
       name: 'password-reset',
       component: LogIn
+    },
+    {
+      path: '/dashboard',
+      name: 'Dashboard',
+      component: Dashboard
+    },
+    {
+      path: '/upload',
+      name: 'Upload',
+      component: Upload
     }
   ]
 })
