@@ -5,6 +5,7 @@ import store from './store'
 import {
   Vuetify,
   VApp,
+  VCard,
   VCheckbox,
   VNavigationDrawer,
   VFooter,
@@ -12,7 +13,10 @@ import {
   VBtn,
   VIcon,
   VGrid,
+  VTabs,
+  VDivider,
   VToolbar,
+  VTextField,
   VParallax,
   transitions
 } from 'vuetify'
@@ -25,6 +29,7 @@ Vue.use(httpClient)
 Vue.use(Vuetify, {
   components: {
     VApp,
+    VCard,
     VCheckbox,
     VNavigationDrawer,
     VFooter,
@@ -32,12 +37,15 @@ Vue.use(Vuetify, {
     VBtn,
     VIcon,
     VGrid,
+    VTabs,
+    VDivider,
     VToolbar,
+    VTextField,
     VParallax,
     transitions
   },
   theme: {
-    primary: 'black',
+    primary: 'blue',
     secondary: '#424242',
     accent: '#82B1FF',
     error: '#FF5252',
