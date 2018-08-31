@@ -27,6 +27,18 @@
           </v-container>
         </v-card>
       </v-flex>
+      <v-flex>
+       <v-card>
+        <v-card-title primary-title>
+         <v-flex row justify-center>
+          <div>Sign in with:</div>
+          <a :href="googleSignUrl">
+           <v-icon medium color="red darken-3">fa-google-plus</v-icon>
+          </a>
+         </v-flex>
+        </v-card-title>
+       </v-card>
+      </v-flex>
     </v-layout>
   </v-container>
 </template>
