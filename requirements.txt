@@ -1,5 +1,0 @@
-django == 2.0.5
-django-decouple==2.1
-social-auth-app-django==2.1.0
-flake8
-psycopg2

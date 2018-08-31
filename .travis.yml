@@ -1,21 +1,26 @@
 language: python
 python:
   - "3.6"
-before_install:
-  - export DJANGO_SETTINGS_MODULE=mug_lo.settings
-  - export DJANGO_SECRET_KEY='q$o5mx19x9(9_^rzqf@o@s^t%t!ghix7($f9ymy49_^ryzq9x9'
+addons:
+  postgresql: "9.6"
+dist: trusty
+before_script:
   - psql -c "CREATE DATABASE muglodb;" -U postgres
   - psql -c "CREATE USER muglouser WITH LOGIN PASSWORD 'password';" -U postgres
   - psql -c "ALTER ROLE muglouser WITH CREATEDB;" -U postgres
   - psql -c "GRANT ALL PRIVILEGES ON DATABASE muglodb TO muglouser;" -U postgres
+before_install:
+  - export DJANGO_SETTINGS_MODULE=mug_lo.settings
+  - export DJANGO_SECRET_KEY='q$o5mx19x9(9_^rzqf@o@s^t%t!ghix7($f9ymy49_^ryzq9x9'
 install:
-  - pip3 install -r requirements.txt
-  - pip3 install coveralls
+  - pip3 install pipenv
+  - pipenv install --dev
 script:
   - cd src
+  - source "$(pipenv --venv)"/bin/activate
   - flake8 .
-  - python3 manage.py makemigrations
-  - python3 manage.py migrate
+  - python manage.py makemigrations
+  - python manage.py migrate
   - coverage run manage.py test
   - cd ../ui
   - npm install
