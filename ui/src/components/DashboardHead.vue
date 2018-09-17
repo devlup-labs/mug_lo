@@ -1,52 +1,50 @@
 <template>
   <div>
     <v-layout row wrap>
-      <v-flex xs6 offset-sm0 pa-2>
-        <v-card>
-          <v-card-title><span class="blue--text">Bookmarks</span></v-card-title>
+      <v-flex md6 xs12 offset-sm0 pa-2>
+        <v-card  style="background-color:white" >
+          <center><v-card-text :style="{'background-color':colorScheme}"><div class="headline primary-title white--text">Bookmarks</div></v-card-text></center>
           <v-layout row wrap>
-            <v-flex v-for="(item,i) in bookmarks" :key="i" pa-2>
-              <v-card>
-                <v-card-media :src="item.src" height="150px">
-                </v-card-media>
-                <v-layout justify-center>
-                  <v-card-actions>
-                    <v-btn primary round color="info">
-                      {{item.title}}
-                    </v-btn>
-                  </v-card-actions>
-                </v-layout>
-              </v-card>
+            <v-flex v-for="(item,i) in bookmarks" :key="i" pa-2 xs4>
+              <router-link to='/dashboard' :color=colorScheme>
+                  <v-card v-bind:style="{ 'background-image': 'url(' + item.src + ')' }" class="card" >
+                    <v-card-media height=200px class="mask1" >
+                      <v-layout align-end justify-center>
+                        <h3 class="white--text"><bold><center>Digital Logic and Design</center></bold></h3>
+                      </v-layout>
+                    </v-card-media>
+                  </v-card>
+                </router-link>
             </v-flex>
           </v-layout>
-          <v-layout justify-end>
+           <v-layout justify-end>
             <v-card-actions>
-              <v-btn primary round color="info">View More</v-btn>
+              <router-link to='/coursecontents'><v-btn primary round color="info">View More</v-btn>
+              </router-link>
             </v-card-actions>
           </v-layout>
         </v-card>
       </v-flex>
-      <v-flex xs6 offset-sm0 pa-2>
+      <v-flex md6 xs12  offset-sm0 pa-2 >
         <v-card>
-          <v-card-title><span class="blue--text">Recently Uploaded</span></v-card-title>
+          <center><v-card-text :style="{'background-color':colorScheme}"><div class="headline primary-title white--text">Recently Uploaded</div></v-card-text></center>
           <v-layout row wrap>
-            <v-flex v-for="(item,i) in uploads" :key="i" pa-2>
-              <v-card>
-                <v-card-media :src="item.src" height="150px">
-                </v-card-media>
-                <v-layout justify-center>
-                  <v-card-actions>
-                    <v-btn primary round color="info">
-                      {{item.title}}
-                    </v-btn>
-                  </v-card-actions>
-                </v-layout>
-              </v-card>
+            <v-flex v-for="(item,i) in uploads" :key="i" pa-2 xs4>
+              <router-link to='/dashboard' :color=colorScheme>
+                  <v-card v-bind:style="{ 'background-image': 'url(' + item.src + ')' }" class="card">
+                    <v-card-media height=200px class="mask1">
+                      <v-layout align-end justify-center>
+                        <h3 class="white--text"><bold><center>Digital Logic and Design</center></bold></h3>
+                      </v-layout>
+                    </v-card-media>
+                  </v-card>
+                </router-link>
             </v-flex>
           </v-layout>
-          <v-layout justify-end>
+           <v-layout justify-end>
             <v-card-actions>
-              <v-btn primary round color="info">View More</v-btn>
+              <router-link to='/coursecontents'><v-btn primary round color="info">View More</v-btn>
+              </router-link>
             </v-card-actions>
           </v-layout>
         </v-card>
@@ -55,25 +53,24 @@
     <v-layout row wrap>
       <v-flex xs12 offset-sm0 pa-2>
         <v-card>
-          <v-card-title><span class="blue--text">Your Courses</span></v-card-title>
+          <center><v-card-text :style="{'background-color':colorScheme}"><div class="headline primary-title white--text">Your Courses</div></v-card-text></center>
           <v-layout row wrap>
-            <v-flex v-for="(item,i) in courses" :key="i" pa-2>
-              <v-card>
-                <v-card-media :src="item.src" height="150px">
-                </v-card-media>
-                <v-layout justify-center>
-                  <v-card-actions>
-                    <v-btn primary round color="info">
-                      {{item.title}}
-                    </v-btn>
-                  </v-card-actions>
-                </v-layout>
-              </v-card>
+            <v-flex v-for="(item,i) in courses" :key="i" pa-2 xs4 md2>
+              <router-link to='/dashboard' :color=colorScheme>
+                  <v-card v-bind:style="{ 'background-image': 'url(' + item.src + ')' }" class="card">
+                    <v-card-media height=200px class="mask1">
+                      <v-layout align-end justify-center>
+                        <h3 class="white--text"><bold><center>Digital Logic and Design</center></bold></h3>
+                      </v-layout>
+                    </v-card-media>
+                  </v-card>
+                </router-link>
             </v-flex>
           </v-layout>
           <v-layout justify-end>
             <v-card-actions>
-              <v-btn primary round color="info">View More</v-btn>
+              <router-link to='/coursecontents'><v-btn primary round color="info">View More</v-btn>
+              </router-link>
             </v-card-actions>
           </v-layout>
         </v-card>
@@ -98,6 +95,7 @@
     },
     data () {
       return {
+        colorScheme: '#1E88E5',
         bookmarks: [
           {title: 'Book1', src: 'https://images-na.ssl-images-amazon.com/images/I/81OnFXKcHKL.jpg'},
           {title: 'Book2', src: 'https://images-na.ssl-images-amazon.com/images/I/81OnFXKcHKL.jpg'},
@@ -124,4 +122,14 @@
   a {
     text-decoration: none;
   }
+  .card {
+    flex: 0 0 auto;
+    
+    background-size:cover;
+    height:200px;
+  }
+.mask1 {
+  background: linear-gradient(to top,black 1%, transparent);
+  opacity:0.75; 
+}
 </style>

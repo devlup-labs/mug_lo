@@ -1,11 +1,11 @@
 import Vue from 'vue'
-import Hello from '@/components/Hello'
+import LogIn from '../../../src/pages/login'
 
-describe('Hello.vue', () => {
+describe('LogIn.vue', () => {
   it('should render correct contents', () => {
-    const Constructor = Vue.extend(Hello)
+    const Constructor = Vue.extend(LogIn)
     const vm = new Constructor().$mount()
     expect(vm.$el.querySelector('.hello h1').textContent)
-      .to.equal('Welcome to Your Vue.js PWA')
+      .to.equal('<W></W>elcome to Your Vue.js PWA')
   })
 })
